@@ -2,7 +2,16 @@ setYear();
 
 useRandomSNPrompt();
 
+setTimeout(function() {
+  document.getElementById('print-page').innerHTML = 'Click to print';
+}, 5000);
+
 function printPage() {
+  // override settings, just in case
+  let promptSpan = document.getElementById('prompt');
+  promptSpan.style.background = 'white !important';
+  promptSpan.style.padding = '0 !important';
+  // actually open print dialog window
   window.print();
 }
 
