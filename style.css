@@ -52,16 +52,36 @@ button {
   border: none;
 }
 
-button:hover {
-  background: #2fa7d6;
-  box-shadow: 0 1px 5px rgba(0,0,0,0.12), 0 1px 5px rgba(0,0,0,0.24);
-  font-weight: bold;
+a {
+  text-decoration: none;
+  color: black;
 }
 
-@media print
-{    
-    #button-bar /* hide buttons upon print */
-    {
+
+@media print {    
+  
+    #button-bar { /* hide buttons upon print */
         display: none !important;
     }
+  
+}
+
+@media not print {
+
+  button:hover {
+    background: #2fa7d6;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.12), 0 1px 5px rgba(0,0,0,0.24);
+    font-weight: bold;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+    color: blue;
+    font-size: medium;
+  }
+
+  #prompt:hover {
+    background: yellow !important;
+    padding: 10px !important;
+  }
 }
