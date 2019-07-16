@@ -3,7 +3,7 @@ setYear();
 useRandomSNPrompt();
 
 setTimeout(function() {
-  document.getElementById('print-page').innerHTML = 'Click to print';
+  document.getElementById('print-page').innerHTML = '→ Print';
 }, 5000);
 
 function printPage() {
