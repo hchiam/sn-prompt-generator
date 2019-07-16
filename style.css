@@ -1,0 +1,67 @@
+* {
+  font-family: avenir, helvetica, arial, sans-serif;
+  border-radius: 5px;
+  transition: 0.1s;
+}
+
+body {
+  padding: 100px;
+}
+
+.mini {
+  font-size: x-small;
+}
+
+.right-align {
+  text-align: right;
+}
+
+.big-space {
+  margin-bottom: 100px;
+}
+
+.really-big-space {
+  margin-bottom: 300px;
+}
+
+.italic {
+  font-style: italic;
+}
+
+@page {
+  /* make printing hide page number, url, etc */
+  size: auto;   /* auto is the initial value */
+  margin: 0;  /* this affects the margin in the printer settings */
+}
+
+#button-bar {
+  /* make buttons float */
+  position: absolute;
+  height: 60px;
+  width: 300px;
+  left: calc(50% - 150px);
+  top: 75px;
+  text-align:center;
+}
+
+button {
+  padding: 10px;
+  margin: 3px;
+  background: #cadce3;
+  font-size: large;
+  border: none;
+}
+
+button:hover {
+  background: #2fa7d6;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.12), 0 1px 5px rgba(0,0,0,0.24);
+  font-weight: bold;
+}
+
+@media print
+{    
+    #button-bar /* hide buttons upon print */
+    {
+        display: none !important;
+    }
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="/style.css">
+    <script src="/script.js" defer></script>
+  </head>  
+  <body>
+    <div id="button-bar">
+      <button onclick="printPage()" title="These buttons will not show up in the printout.">
+        Print
+      </button>
+      <button onclick="useRandomSNPrompt()" title="These come from student and teacher suggestions.">
+        Random prompt
+      </button>
+    </div>
+    <p class="mini" style="float: left;">
+      SN to "soar like an eagle"
+    </p>
+    <p class="right-align">
+      Sermon Topic: ________________________________
+    </p>
+    <p class="right-align">
+      My Name: ________________________________
+    </p>
+    <p class="right-align" id="year">
+      2019
+    </p>
+    <hr>
+    <p class="big-space">
+      Write at least 1 big take-away here: 
+      <span class="mini italic">
+        (do this last)
+      </span>
+    </p>
+    <hr>
+    <p class="really-big-space">
+      <strong>Prompt:</strong> <span id="prompt"></span>
+    </p>
+    <hr style="border-top: dashed 1px #ccc;">
+  </body>
+</html>

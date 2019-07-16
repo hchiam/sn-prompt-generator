@@ -1,1 +1,1 @@
-# sn-prompt-generator
+# Sermon Note Prompt Generator
