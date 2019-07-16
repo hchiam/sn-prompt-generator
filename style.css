@@ -65,3 +65,19 @@ button:hover {
         display: none !important;
     }
 }
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: blue;
+  font-size: medium;
+}
+
+#prompt:hover {
+  background: yellow !important;
+  padding: 10px !important;
+}
