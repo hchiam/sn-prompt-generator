@@ -57,6 +57,9 @@ a {
   color: black;
 }
 
+hr {
+  border-top: dashed 1px;
+}
 
 @media print {    
   
