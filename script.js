@@ -2,6 +2,8 @@ setYear();
 
 useRandomSNPrompt();
 
+useRandomReminder();
+
 setTimeout(function() {
   document.getElementById('print-page').innerHTML = '→ Print';
 }, 5000);
@@ -23,12 +25,18 @@ function setYear() {
 
 function useRandomSNPrompt() {
   let prompts = getPrompts();
-  let prompt = getRandomMessage(prompts);
+  let prompt = pickRandomMessage(prompts);
   createPrompt(prompt);
   highlightPrompt();
 }
 
-function getRandomMessage(messages) {
+function useRandomReminder() {
+  let reminders = getReminders();
+  let reminder = pickRandomMessage(reminders);
+  createReminder(reminder);
+}
+
+function pickRandomMessage(messages) {
   if (!Array.isArray(messages)) {
     throw 'messages input must be an array';
   }
@@ -45,6 +53,11 @@ function getRandomNumber(min,max) {
 function createPrompt(message) {
   let promptSpan = document.getElementById('prompt');
   promptSpan.innerHTML = message;
+}
+
+function createReminder(message) {
+  let remindertSpan = document.getElementById('reminder');
+  remindertSpan.innerHTML = message;
 }
 
 function highlightPrompt() {
@@ -108,4 +121,22 @@ function getPrompts() {
     "Write down the key words in English and Chinese (or how the chinese sounds like, like pinyin).",
   ];
   return prompts;
+}
+
+function getReminders() {
+  let reminders = [
+    '"Soar like an eagle" on Sabbath',
+    '"Soar like an eagle" on Sabbath',
+    '"Soar like an eagle" on Sabbath',
+    '"Soar like an eagle" on Sabbath',
+    '"Soar like an eagle" on Sabbath',
+    '"Soar like an eagle" on Sabbath',
+    "Remember to try to not draw unrelated things. This sheet is to help you see the bigger picture.",
+    "Try not to draw unrelated things. This sheet is to help you dig for the hidden gold in the sermon.",
+    "Please try to focus. Use the time and this sheet to make the most of the sermon.",
+    "Remember to focus on the sermon. You never know when you'll learn something new.",
+    "Remember to focus on learning something new. You never know what you might miss you don't see the bigger picture.",
+    "Please don't draw unrelated things. Focus on the bigger picture of what you could use from the sermon.",
+  ];
+  return reminders;
 }
