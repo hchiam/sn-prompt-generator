@@ -46,16 +46,6 @@ function pickRandomMessage(messages) {
   return messages[choice];
 }
 
-function pickRandomReminder(messages) {
-  if (!Array.isArray(messages)) {
-    throw 'messages input must be an array';
-  }
-  let min = 0;
-  let max = messages.length-1;
-  let choice = getRandomNumber(min,max);
-  return messages[choice];
-}
-
 function getRandomNumber(min,max) {
   return min + Math.floor(Math.random() * max);
 }
