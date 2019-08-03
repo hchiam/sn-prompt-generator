@@ -135,7 +135,7 @@ function getReminders() {
     "Try not to draw unrelated things. This sheet is to help you dig for the hidden gold in the sermon.",
     "Please try to focus. Use the time and this sheet to make the most of the sermon.",
     "Remember to focus on the sermon. You never know when you'll learn something new.",
-    "Remember to focus on learning something new. You never know what you might miss you don't see the bigger picture.",
+    "Remember to focus on learning something new. You never know what you might miss if you don't look for the bigger picture.",
     "Please don't draw unrelated things. Focus on the bigger picture of what you could use from the sermon.",
   ];
   return reminders;
