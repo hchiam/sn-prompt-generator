@@ -119,6 +119,8 @@ function getPrompts() {
     "Pretend you need to use info from this sermon in an emergency. How might you prepare?",
     "Be the \"buddy\" of the translator and write down tricky words. And maybe words you didn't know too.",
     "Write down the key words in English and Chinese (or how the chinese sounds like, like pinyin).",
+    "Try to not draw any pictures. Only use words from the sermon. (Be creative.)",
+    "Re-imagine one of the teachings as a mission-critical situation (life/death split-second decision). How might you prepare? Make double-sure you understand the mission correctly."
   ];
   return prompts;
 }
