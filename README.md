@@ -1,3 +1,5 @@
-# Sermon Note Prompt Generator
+# Bible Verse Listener
 
-https://sn-prompt-generator.glitch.me/
+Try it here: https://bibleverse.glitch.me
+
+See the code here: https://glitch.com/edit/#!/bibleverse

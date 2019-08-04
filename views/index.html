@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bible Verse Listener</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </head>  
+  <body>
+    <header>
+      <p id="use-chrome"></p>
+      <p id="use-laptop"></p>
+    </header>
+    
+    <div id="remind-user-about-listening" 
+         title="Web Speech Recognition API is on Continuous Mode"
+         onclick=""></div>
+
+    <div id="main">
+      <p id="instruction">Say a verse, like "Matthew 6 33".</p>
+      <p id="output"></p>
+      <p id="verse-words"></p>
+      <p id="copyright"></p>
+      <p id="many-api-calls"></p>
+    </div>
+
+    <div id="list-of-previous-container">
+      <div id="list-of-previous">
+      </div>
+    </div>
+    
+    <script src="script.js"></script>
+  </body>
+</html>
