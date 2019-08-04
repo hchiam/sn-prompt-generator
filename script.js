@@ -41,7 +41,7 @@ function pickRandomMessage(messages) {
     throw 'messages input must be an array';
   }
   let min = 0;
-  let max = messages.length-1;
+  let max = messages.length;
   let choice = getRandomNumber(min,max);
   return messages[choice];
 }
