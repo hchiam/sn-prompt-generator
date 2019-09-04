@@ -13,6 +13,8 @@ function printPage() {
   let promptSpan = document.getElementById('prompt');
   promptSpan.style.background = 'white !important';
   promptSpan.style.padding = '0 !important';
+  // set default file name
+  document.title = 'sn-prompt-generator_' + new Date().getTime() + '.pdf';
   // actually open print dialog window
   window.print();
 }
