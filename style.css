@@ -44,7 +44,7 @@ body {
   text-align: center;
 }
 
-#choose-prompt {
+.temporarily-yellow {
   background: yellow;
 }
 
