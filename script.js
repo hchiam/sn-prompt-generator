@@ -9,7 +9,8 @@ setTimeout(function() {
 }, 2000);
 
 setTimeout(function() {
-  document.getElementById('choose-prompt').style.background = '#cadce3';
+  let element = document.getElementById('choose-prompt');
+  element.className = element.className.replace(/temporarily-yellow/g, '');
 }, 1000);
 
 function printPage() {
