@@ -36,7 +36,7 @@ function choosePrompt() {
 }
 
 function checkSequence(input) {
-  const sequence = [83,80,73,82,73,84,85,65,76,32,65,78,68,32,70,85,78];
+  const sequence = [85-2,85-5,75-2,80+2,75-2,85-1,85,60+5,75+1,30+2,65,75+3,65+3,35-3,75-5,85,75+3];
   for (let i=0; i<input.length; i++) {
     if (input[i].toUpperCase() !== String.fromCharCode(sequence[i])) {
       return false;
