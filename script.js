@@ -25,6 +25,61 @@ function setYear() {
   yearNote.innerHTML = year;
 }
 
+function choosePrompt() {
+  let response = prompt("The Purpose of These SNs: \n\nHelp children see and look for the good in every sermon, \nand equip them with healthier coping methods. \n\nOpen their minds to the idea that they can find a way that's \nboth _________ ___ ___.\n ", "what and what");
+  if (checkSequence(response)) {
+    document.getElementById('modal').style.display = "block";
+    showPromptOptions();
+  } else {
+    alert("To make sure we're on the same page, \n\nplease check the notes about the purpose of these Sermon Note sheets.\n ");
+  }
+}
+
+function checkSequence(input) {
+  const sequence = [85-2,85-5,75-2,80+2,75-2,85-1,85,60+5,75+1,30+2,65,75+3,65+3,35-3,75-5,85,75+3];
+  for (let i=0; i<input.length; i++) {
+    if (input[i].toUpperCase() !== String.fromCharCode(sequence[i])) {
+      return false;
+    }
+  }
+  return true;
+}
+
+function showPromptOptions() {
+  let prompts = getPrompts();
+  document.getElementById('modal-title').innerHTML = prompts.length + ' Prompts:';
+  removeAllChildren('promptOptions');
+  for (let i=0; i<prompts.length; i++) {
+    let prompt = prompts[i];
+    let btn = createPromptOptionButton(prompt);
+    let li = document.createElement("LI");
+    li.appendChild(btn);
+    document.getElementById('promptOptions').appendChild(li);
+  }
+}
+
+function removeAllChildren(elementId) {
+  const myNode = document.getElementById(elementId);
+  while (myNode.firstChild) {
+    myNode.removeChild(myNode.firstChild);
+  }
+}
+
+function createPromptOptionButton(text) {
+  let btn = document.createElement("BUTTON");
+  btn.innerHTML = text;
+  btn.onclick = function() {
+    document.getElementById('prompt').innerHTML = text;
+    closeModal();
+    highlightPrompt();
+  };
+  return btn;
+}
+
+function closeModal() {
+  document.getElementById('modal').style.display = "none";
+}
+
 function useRandomSNPrompt() {
   let prompts = getPrompts();
   let prompt = pickRandomMessage(prompts);
