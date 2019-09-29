@@ -44,6 +44,10 @@ body {
   text-align: center;
 }
 
+#choose-prompt {
+  background: yellow;
+}
+
 button {
   padding: 10px;
   margin: 5px;

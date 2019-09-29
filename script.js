@@ -6,7 +6,11 @@ useRandomReminder();
 
 setTimeout(function() {
   document.getElementById('print-page').innerHTML = '→ Print';
-}, 5000);
+}, 2000);
+
+setTimeout(function() {
+  document.getElementById('choose-prompt').style.background = '#cadce3';
+}, 1000);
 
 function printPage() {
   // override settings, just in case
