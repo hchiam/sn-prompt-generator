@@ -25,6 +25,61 @@ function setYear() {
   yearNote.innerHTML = year;
 }
 
+function choosePrompt() {
+  let response = prompt("The Purpose of These SNs: \n\nHelp children see and look for the good in every sermon, \nand equip them with healthier coping methods. \n\nOpen their minds to the idea that they can find a way that's \nboth _________ ___ ___.\n ", "what and what");
+  if (checkSequence(response)) {
+    document.getElementById('modal').style.display = "block";
+    showPromptOptions();
+  } else {
+    alert("To make sure we're on the same page, \n\nplease check the notes about the purpose of these Sermon Note sheets.\n ");
+  }
+}
+
+function checkSequence(input) {
+  const sequence = [83,80,73,82,73,84,85,65,76,32,65,78,68,32,70,85,78];
+  for (let i=0; i<input.length; i++) {
+    if (input[i].toUpperCase() !== String.fromCharCode(sequence[i])) {
+      return false;
+    }
+  }
+  return true;
+}
+
+function showPromptOptions() {
+  let prompts = getPrompts();
+  document.getElementById('modal-title').innerHTML = prompts.length + ' Prompts:';
+  removeAllChildren('promptOptions');
+  for (let i=0; i<prompts.length; i++) {
+    let prompt = prompts[i];
+    let btn = createPromptOptionButton(prompt);
+    let li = document.createElement("LI");
+    li.appendChild(btn);
+    document.getElementById('promptOptions').appendChild(li);
+  }
+}
+
+function removeAllChildren(elementId) {
+  const myNode = document.getElementById(elementId);
+  while (myNode.firstChild) {
+    myNode.removeChild(myNode.firstChild);
+  }
+}
+
+function createPromptOptionButton(text) {
+  let btn = document.createElement("BUTTON");
+  btn.innerHTML = text;
+  btn.onclick = function() {
+    document.getElementById('prompt').innerHTML = text;
+    closeModal();
+    highlightPrompt();
+  };
+  return btn;
+}
+
+function closeModal() {
+  document.getElementById('modal').style.display = "none";
+}
+
 function useRandomSNPrompt() {
   let prompts = getPrompts();
   let prompt = pickRandomMessage(prompts);

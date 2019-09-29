@@ -16,6 +16,21 @@
       <button id="random-prompt" onclick="useRandomSNPrompt()" title="These come from student and teacher suggestions.">
         Random prompt
       </button>
+      <button id="choose-prompt" onclick="choosePrompt()" title="Choose a specific prompt so you can print that one.">
+        Choose prompt
+      </button>
+    </div>
+    <div id="modal">
+      <div id="modal-content">
+        <h1 id="modal-title">Choose a Prompt:</h1>
+        <button onclick="closeModal()" style="float: right; display: inline;">
+          Cancel
+        </button>
+        <ol id="promptOptions"></ol>
+        <button onclick="closeModal()">
+          Cancel
+        </button>
+      </div>
     </div>
     <p class="mini right-align">
       <a href="https://www.biblegateway.com/passage/?search=Isaiah+40%3A31%3B+58%3A13-14&version=NKJV" 
