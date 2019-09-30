@@ -4,6 +4,8 @@ useRandomSNPrompt();
 
 useRandomReminder();
 
+useRandomLabels();
+
 setTimeout(function() {
   document.getElementById('print-page').innerHTML = '→ Print';
 }, 2000);
@@ -96,6 +98,19 @@ function useRandomReminder() {
   let reminders = getReminders();
   let reminder = pickRandomMessage(reminders);
   createReminder(reminder);
+}
+
+function useRandomLabels() {
+  let sermonTopicLabels = [
+    'Sermon topic',
+    'Topic',
+  ];
+  let myNameLabels = [
+    'My name',
+    'Notekeeper name',
+  ];
+  document.getElementById('sermon-topic').innerHTML = pickRandomMessage(sermonTopicLabels);
+  document.getElementById('my-name').innerHTML = pickRandomMessage(myNameLabels);
 }
 
 function pickRandomMessage(messages) {
