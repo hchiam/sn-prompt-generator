@@ -31,7 +31,7 @@ function setYear() {
 }
 
 function choosePrompt() {
-  let response = prompt("The Purpose of These SNs: \n\nHelp children see and look for the good in every sermon, \nand equip them with healthier coping methods. \n\nOpen their minds to the idea that they can find a way that's \nboth _________ ___ ___.\n ", "what and what");
+  let response = prompt("The Purpose of These SNs: \n\nHelp children see and look for the good in every sermon, \nand equip them with healthier coping methods. \n\nOpen their minds to the idea that they can find a way that's \nboth ___ ___ ___.\n ", "what and what");
   if (checkSequence(response)) {
     document.getElementById('modal').style.display = "block";
     showPromptOptions();
