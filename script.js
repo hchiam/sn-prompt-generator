@@ -197,25 +197,7 @@ function getPrompts() {
     "Be the \"buddy\" of the translator and write down tricky words. And maybe words you didn't know too.",
     "Write down the key words in English and Chinese (or how the chinese sounds like, like pinyin).",
     "Try to not draw any pictures. Only use words from the sermon. (Be creative.)",
-    "Re-imagine one of the teachings as a mission-critical situation (life/death split-second decision). How might you prepare? Make double-sure you understand the mission correctly.",
-    "Draw a diagram of the main character if there is one, or the main lesson and life application to you.",
-    "Write about how the hymns apply to the sermon.",
-    "Count how many times they said a word in the title. Or a word that means something similar. (Practice active listening.)",
-    "Draw a table or Venn diagram of the different characters (or characteristics).",
-    "Draw your notes in pictures.",
-    "Make a song out of the sermon.",
-    "Draw the main message in your life.",
-    "Write your notes in question form.",
-    "Take notes on the different perspectives of different characters in the sermon.",
-    "Take notes on the feelings (of the different characters/people).",
-    "Draw lines to show connections between different notes and ideas.",
-    "Draw a picture that relates to the sermon and write stuff in the gaps of the picture.",
-    "Draw a whole picture related to the sermon.",
-    "Write all the verse locations.",
-    "Take notes with a pen that can't be erased. (Choose your pen strokes wisely!)",
-    'Track the number of times the speaker says "Jesus", "God", or "love".',
-    "Draw out the connection between the hymn and the main message. (Hint: is the main message always the same as the topic?)",
-    "Make the entire sermon a big landscape picture.",
+    "Re-imagine one of the teachings as a mission-critical situation (life/death split-second decision). How might you prepare? Make double-sure you understand the mission correctly."
   ];
   return prompts;
 }
