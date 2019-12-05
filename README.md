@@ -4,4 +4,6 @@
 
 https://sn-prompt-generator.glitch.me/
 
+Fun fact: Works offline! :)
+
 You may also like: https://github.com/hchiam/bible-verse-listener
