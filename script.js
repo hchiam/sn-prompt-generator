@@ -7,7 +7,7 @@ useRandomReminder();
 useRandomLabels();
 
 setTimeout(function() {
-  document.getElementById('print-page').innerHTML = '→ Print';
+  document.getElementById('print-page').innerText = '→ Print';
 }, 2000);
 
 setTimeout(function() {
@@ -29,7 +29,7 @@ function printPage() {
 function setYear() {
   let year = new Date().getFullYear();
   let yearNote = document.getElementById('year');
-  yearNote.innerHTML = year;
+  yearNote.innerText = year;
 }
 
 function choosePrompt() {
@@ -54,7 +54,7 @@ function checkSequence(input) {
 
 function showPromptOptions() {
   let prompts = getPrompts();
-  document.getElementById('modal-title').innerHTML = prompts.length + ' Prompts:';
+  document.getElementById('modal-title').innerText = prompts.length + ' Prompts:';
   removeAllChildren('promptOptions');
   for (let i=0; i<prompts.length; i++) {
     let prompt = prompts[i];
@@ -74,9 +74,9 @@ function removeAllChildren(elementId) {
 
 function createPromptOptionButton(text) {
   let btn = document.createElement("BUTTON");
-  btn.innerHTML = text;
+  btn.innerText = text;
   btn.onclick = function() {
-    document.getElementById('prompt').innerHTML = text;
+    document.getElementById('prompt').innerText = text;
     closeModal();
     highlightPrompt();
   };
@@ -109,8 +109,8 @@ function useRandomLabels() {
     'My name',
     'Notekeeper name',
   ];
-  document.getElementById('sermon-topic').innerHTML = pickRandomMessage(sermonTopicLabels);
-  document.getElementById('my-name').innerHTML = pickRandomMessage(myNameLabels);
+  document.getElementById('sermon-topic').innerText = pickRandomMessage(sermonTopicLabels);
+  document.getElementById('my-name').innerText = pickRandomMessage(myNameLabels);
 }
 
 function pickRandomMessage(messages) {
@@ -129,12 +129,12 @@ function getRandomNumber(min,max) {
 
 function createPrompt(message) {
   let promptSpan = document.getElementById('prompt');
-  promptSpan.innerHTML = message;
+  promptSpan.innerText = message;
 }
 
 function createReminder(message) {
   let remindertSpan = document.getElementById('reminder');
-  remindertSpan.innerHTML = message;
+  remindertSpan.innerText = message;
 }
 
 function highlightPrompt() {
