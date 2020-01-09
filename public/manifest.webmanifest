@@ -1,0 +1,18 @@
+{
+  "short_name": "snpg",
+  "name": "Sermon Note Prompt Generator",
+  "description": "Generate a Sermon Note Printout with a Random Prompt!",
+  "icons": [
+    {
+      "src": "icon.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/index.html",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#ffffff",
+  "prefer_related_applications": false
+}
