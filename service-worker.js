@@ -1,7 +1,8 @@
-const SW_VERSION = 'snpg-practice-version_03'; // also can serve as cache name
+const SW_VERSION = 'snpg-version_04'; // also can serve as cache name
 
 const appShellURLs = [
   'index.html',
+  'manifest.webmanifest',
   'minified-script.js',
   'minified-style.css',
   'offline-page.html',
