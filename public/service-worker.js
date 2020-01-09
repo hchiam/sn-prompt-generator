@@ -1,11 +1,11 @@
-const SW_VERSION = 'snpg-version_04'; // also can serve as cache name
+const SW_VERSION = 'snpg-version_05'; // also can serve as cache name
 
 const appShellURLs = [
-  'index.html',
-  'manifest.webmanifest',
-  'minified-script.js',
-  'minified-style.css',
-  'offline-page.html',
+  '/index.html',
+  '/manifest.webmanifest',
+  '/minified-script.js',
+  '/minified-style.css',
+  '/offline-page.html',
 ];
 
 // when install service worker:
