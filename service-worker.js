@@ -1,43 +1,64 @@
-var CACHE_NAME = 'version_02';
+const SW_VERSION = 'snpg-practice-version_03'; // also can serve as cache name
 
-var appShellURLs = [
+const appShellURLs = [
   'index.html',
   'minified-script.js',
-  'offline-page.html',
   'minified-style.css',
+  'offline-page.html',
 ];
 
-self.addEventListener('install', function (event) {
-  event.waitUntil(caches.open(CACHE_NAME)
-    .then(function (cache) {
+// when install service worker:
+self.addEventListener('install', (event) => {
+  event.waitUntil(caches.open(SW_VERSION)
+    .then((cache) => {
       console.log('Service worker installing.')
+      // cache app shell URLs/resources:
       return cache.addAll(appShellURLs);
     })
   );
 });
 
-self.addEventListener('fetch', function (event) {
-  var url = new URL(event.request.url);
-  if (appShellURLs.indexOf(url.pathname) !== -1) {
+// when activate service worker:
+self.addEventListener('activate', (event) => {
+  event.waitUntil(
+    caches.keys() // cache names (caches)
+      .then((cacheKeys) => { // cache entries (keys/entries in a single cache)
+        const oldKeys = cacheKeys.filter((key) => key.indexOf(SW_VERSION) !== 0);
+        // promise to delete all old keys in this cache:
+        const promisesToDeleteOldKeys = oldKeys.map((oldKey) => caches.delete(oldKey));
+        // don't continue until ALL old keys are deleted:
+        return Promise.all(promisesToDeleteOldKeys);
+      })
+  );
+});
+
+// when a resource fetch can be intercepted by service worker:
+self.addEventListener('fetch', (event) => {
+  const url = new URL(event.request.url);
+  const wantAppShellResource = (appShellURLs.indexOf(url.pathname) !== -1);
+  const navigatingToPage = (event.request.mode === 'navigate');
+  if (wantAppShellResource) {
     event.respondWith(caches.match(event.request)
-      .then(function (response) {
+      .then((response) => {
         if (!response) {
           throw new Error(event.request + ' not found in cache');
         }
-        console.log('Service worker working even though you are offline.');
+        console.log(`Service worker fetching resource even though you're offline.`);
+        // get resource from cache:
         return response;
       })
-      .catch(function (error) {
+      .catch((error) => {
+        // fetch resource from network if not in cache:
         fetch(event.request);
       })
     );
-  } else if (event.request.mode === 'navigate') {
+  } else if (navigatingToPage) {
     event.respondWith(fetch(event.request)
-      .catch(function (error) {
-        return caches.open(CACHE_NAME)
-          .then(function (cache) {
-            console.log('Service worker working even though you are offline.');
-            // return cache.matchAll(URLS);
+      .catch((error) => {
+        return caches.open(SW_VERSION)
+          .then((cache) => {
+            console.log(`Service worker fetching page even though you're offline.`);
+            // get page from cache:
             return cache.match('offline-page.html');
           });
       })
