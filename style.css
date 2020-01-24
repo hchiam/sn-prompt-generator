@@ -8,8 +8,19 @@ body {
   padding: 100px;
 }
 
+footer {
+  position: fixed;
+  right: 10%;
+  bottom: 5%;
+  font-size: 5px;
+}
+
 .mini {
   font-size: x-small;
+}
+
+.left-align {
+  text-align: left;
 }
 
 .right-align {
@@ -21,7 +32,7 @@ body {
 }
 
 .really-big-space {
-  margin-bottom: 300px;
+  margin-bottom: 400px;
 }
 
 .italic {
