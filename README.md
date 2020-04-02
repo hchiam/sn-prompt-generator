@@ -1,6 +1,6 @@
 # Sermon Note Prompt Generator
 
-[![HitCount](http://hits.dwyl.com/hchiam/sn-prompt-generator.svg)](http://hits.dwyl.com/hchiam/sn-prompt-generator)
+![version](https://img.shields.io/github/release/hchiam/sn-prompt-generator) [![HitCount](http://hits.dwyl.com/hchiam/sn-prompt-generator.svg)](http://hits.dwyl.com/hchiam/sn-prompt-generator)
 
 <https://sn-prompt-generator.surge.sh>
 
