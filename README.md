@@ -21,7 +21,7 @@ The `index.html` file inside the `public` folder is the one that gets served "pu
 
 (If publishing to surge.sh, remember to update the service worker.)
 
-`surge public https://sn-prompt-generator.surge.sh`
+`bash copy-to-public-folder.sh; surge public https://sn-prompt-generator.surge.sh`
 
 ## Version Notes
 
