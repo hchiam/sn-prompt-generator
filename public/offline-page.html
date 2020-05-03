@@ -1,22 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="manifest" href="manifest.webmanifest">
-    <link rel="stylesheet" href="minified-style.css">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="stylesheet" href="minified-style.css" />
     <script src="minified-script.js" defer></script>
-  </head>  
+  </head>
   <body>
     <div id="button-bar">
-      <button id="print-page" onclick="printPage()" title="These buttons will not show up in the printout.">
+      <button
+        id="print-page"
+        onclick="printPage()"
+        title="These buttons will not show up in the printout."
+      >
         Print
       </button>
-      <button id="random-prompt" onclick="useRandomSNPrompt()" title="These come from student and teacher suggestions.">
+      <button
+        id="random-prompt"
+        onclick="useRandomSNPrompt()"
+        title="These come from student and teacher suggestions."
+      >
         Random prompt
       </button>
-      <button id="choose-prompt" class="temporarily-yellow" onclick="choosePrompt()" title="Choose a specific prompt so you can print that one.">
+      <button
+        id="choose-prompt"
+        class="temporarily-yellow"
+        onclick="choosePrompt()"
+        title="Choose a specific prompt so you can print that one."
+      >
         Choose prompt
       </button>
     </div>
@@ -33,9 +46,13 @@
       </div>
     </div>
     <p class="mini left-align">
-      <a href="https://www.biblegateway.com/passage/?search=Isaiah+40%3A31%3B+58%3A13-14&version=NKJV" 
-         title="Isaiah 40:31; 58:13-14" 
-         target="_none" id="reminder">"Soar like an eagle" on Sabbath</a>
+      <a
+        href="https://www.biblegateway.com/passage/?search=Isaiah+40%3A31%3B+58%3A13-14&version=NKJV"
+        title="Isaiah 40:31; 58:13-14"
+        target="_none"
+        id="reminder"
+        >"Soar like an eagle" on Sabbath</a
+      >
     </p>
     <p class="right-align">
       <span id="sermon-topic">Sermon Topic</span>: ____________________
@@ -46,18 +63,24 @@
     <p class="right-align" id="year" title="The year is auto-generated.">
       2019
     </p>
-    <hr>
+    <hr />
     <p class="really-big-space">
-      <strong>Prompt of the day:</strong> 
-      <span id="prompt" 
-            title="Click 'Random prompt' to generate a new prompt."></span>
+      <strong>Prompt of the day:</strong>
+      <span
+        id="prompt"
+        title="Click 'Random prompt' to generate a new prompt."
+      ></span>
       <span class="mini italic">Confused? Ask a teacher.</span>
     </p>
-    <hr>
+    <hr />
     <p class="big-space">
       <strong>Optional free space: </strong>
-      <span class="mini italic">(Feel free to come up with your own notes.)</span>
+      <span class="mini italic"
+        >(Feel free to come up with your own notes.)</span
+      >
     </p>
-    <footer>You can print your own at: https://sn-prompt-generator.glitch.me</footer>
+    <footer>
+      You can print your own at: https://sn-prompt-generator.surge.sh
+    </footer>
   </body>
 </html>
