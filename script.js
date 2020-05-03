@@ -6,45 +6,68 @@ useRandomReminder();
 
 useRandomLabels();
 
-setTimeout(function() {
-  document.getElementById('print-page').innerText = '→ Print';
+setTimeout(function () {
+  document.getElementById("print-page").innerText = "→ Print";
 }, 2000);
 
-setTimeout(function() {
-  let element = document.getElementById('choose-prompt');
-  element.className = element.className.replace(/temporarily-yellow/g, '');
+setTimeout(function () {
+  let element = document.getElementById("choose-prompt");
+  element.className = element.className.replace(/temporarily-yellow/g, "");
 }, 1000);
 
 function printPage() {
   // override settings, just in case
-  let promptSpan = document.getElementById('prompt');
-  promptSpan.style.background = 'white !important';
-  promptSpan.style.padding = '0 !important';
+  let promptSpan = document.getElementById("prompt");
+  promptSpan.style.background = "white !important";
+  promptSpan.style.padding = "0 !important";
   // set default file name
-  document.title = 'sn-prompt-generator_' + new Date().getTime() + '.pdf';
+  document.title = "sn-prompt-generator_" + new Date().getTime() + ".pdf";
   // actually open print dialog window
   window.print();
 }
 
 function setYear() {
   let year = new Date().getFullYear();
-  let yearNote = document.getElementById('year');
+  let yearNote = document.getElementById("year");
   yearNote.innerText = year;
 }
 
 function choosePrompt() {
-  let response = prompt("The Purpose of These SNs: \n\nHelp children see and look for the good in every sermon, \nand equip them with healthier coping methods. \n\nOpen their minds to the idea that they can find a way that's \nboth ___ ___ ___.\n ", "what and what");
+  let response = prompt(
+    "The Purpose of These SNs: \n\nHelp children see and look for the good in every sermon, \nand equip them with healthier coping methods. \n\nOpen their minds to the idea that they can find a way that's \nboth ___ ___ ___.\n ",
+    "what and what"
+  );
   if (checkSequence(response)) {
-    document.getElementById('modal').style.display = "block";
+    document.getElementById("modal").style.display = "block";
     showPromptOptions();
   } else {
-    alert("To make sure we're on the same page, \n\nplease check the notes about the purpose of these Sermon Note sheets.\n ");
+    alert(
+      "To make sure we're on the same page, \n\nplease check the notes about the purpose of these Sermon Note sheets.\n "
+    );
   }
 }
 
 function checkSequence(input) {
-  const sequence = [85-2,85-5,75-2,80+2,75-2,85-1,85,60+5,75+1,30+2,65,75+3,65+3,35-3,75-5,85,75+3];
-  for (let i=0; i<input.length; i++) {
+  const sequence = [
+    85 - 2,
+    85 - 5,
+    75 - 2,
+    80 + 2,
+    75 - 2,
+    85 - 1,
+    85,
+    60 + 5,
+    75 + 1,
+    30 + 2,
+    65,
+    75 + 3,
+    65 + 3,
+    35 - 3,
+    75 - 5,
+    85,
+    75 + 3,
+  ];
+  for (let i = 0; i < input.length; i++) {
     if (input[i].toUpperCase() !== String.fromCharCode(sequence[i])) {
       return false;
     }
@@ -54,14 +77,15 @@ function checkSequence(input) {
 
 function showPromptOptions() {
   let prompts = getPrompts();
-  document.getElementById('modal-title').innerText = prompts.length + ' Prompts:';
-  removeAllChildren('promptOptions');
-  for (let i=0; i<prompts.length; i++) {
+  document.getElementById("modal-title").innerText =
+    prompts.length + " Prompts:";
+  removeAllChildren("promptOptions");
+  for (let i = 0; i < prompts.length; i++) {
     let prompt = prompts[i];
     let btn = createPromptOptionButton(prompt);
     let li = document.createElement("LI");
     li.appendChild(btn);
-    document.getElementById('promptOptions').appendChild(li);
+    document.getElementById("promptOptions").appendChild(li);
   }
 }
 
@@ -75,8 +99,8 @@ function removeAllChildren(elementId) {
 function createPromptOptionButton(text) {
   let btn = document.createElement("BUTTON");
   btn.innerText = text;
-  btn.onclick = function() {
-    document.getElementById('prompt').innerText = text;
+  btn.onclick = function () {
+    document.getElementById("prompt").innerText = text;
     closeModal();
     highlightPrompt();
   };
@@ -84,7 +108,7 @@ function createPromptOptionButton(text) {
 }
 
 function closeModal() {
-  document.getElementById('modal').style.display = "none";
+  document.getElementById("modal").style.display = "none";
 }
 
 function useRandomSNPrompt() {
@@ -101,49 +125,47 @@ function useRandomReminder() {
 }
 
 function useRandomLabels() {
-  let sermonTopicLabels = [
-    'Sermon topic',
-    'Topic',
-  ];
-  let myNameLabels = [
-    'My name',
-    'Notekeeper name',
-  ];
-  document.getElementById('sermon-topic').innerText = pickRandomMessage(sermonTopicLabels);
-  document.getElementById('my-name').innerText = pickRandomMessage(myNameLabels);
+  let sermonTopicLabels = ["Sermon topic", "Topic"];
+  let myNameLabels = ["My name", "Notekeeper name"];
+  document.getElementById("sermon-topic").innerText = pickRandomMessage(
+    sermonTopicLabels
+  );
+  document.getElementById("my-name").innerText = pickRandomMessage(
+    myNameLabels
+  );
 }
 
 function pickRandomMessage(messages) {
   if (!Array.isArray(messages)) {
-    throw 'messages input must be an array';
+    throw "messages input must be an array";
   }
   let min = 0;
   let max = messages.length;
-  let choice = getRandomNumber(min,max);
+  let choice = getRandomNumber(min, max);
   return messages[choice];
 }
 
-function getRandomNumber(min,max) {
+function getRandomNumber(min, max) {
   return min + Math.floor(Math.random() * max);
 }
 
 function createPrompt(message) {
-  let promptSpan = document.getElementById('prompt');
+  let promptSpan = document.getElementById("prompt");
   promptSpan.innerText = message;
 }
 
 function createReminder(message) {
-  let remindertSpan = document.getElementById('reminder');
+  let remindertSpan = document.getElementById("reminder");
   remindertSpan.innerText = message;
 }
 
 function highlightPrompt() {
-  let promptSpan = document.getElementById('prompt');
-  promptSpan.style.background = 'yellow';
-  promptSpan.style.padding = '10px';
-  setTimeout(function() {
-    promptSpan.style.background = 'white';
-    promptSpan.style.padding = '0';
+  let promptSpan = document.getElementById("prompt");
+  promptSpan.style.background = "yellow";
+  promptSpan.style.padding = "10px";
+  setTimeout(function () {
+    promptSpan.style.background = "white";
+    promptSpan.style.padding = "0";
   }, 500);
 }
 
