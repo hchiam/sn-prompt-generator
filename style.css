@@ -103,6 +103,11 @@ hr {
   color: black;
 }
 
+#close-prompt-modal {
+  float: right;
+  display: inline;
+}
+
 @media print {
   #button-bar {
     /* hide buttons upon print */

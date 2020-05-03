@@ -1,3 +1,7 @@
+if (navigator.serviceWorker) {
+  navigator.serviceWorker.register("service-worker.js", { scope: "" });
+}
+
 setYear();
 
 useRandomSNPrompt();
@@ -5,6 +9,8 @@ useRandomSNPrompt();
 useRandomReminder();
 
 useRandomLabels();
+
+setListeners();
 
 setTimeout(function () {
   document.getElementById("print-page").innerText = "→ Print";
@@ -14,6 +20,32 @@ setTimeout(function () {
   let element = document.getElementById("choose-prompt");
   element.className = element.className.replace(/temporarily-yellow/g, "");
 }, 1000);
+
+function setListeners() {
+  document.getElementById("print-page").addEventListener("click", function () {
+    printPage();
+  });
+  document
+    .getElementById("random-prompt")
+    .addEventListener("click", function () {
+      useRandomSNPrompt();
+    });
+  document
+    .getElementById("choose-prompt")
+    .addEventListener("click", function () {
+      choosePrompt();
+    });
+  document
+    .getElementById("close-prompt-modal")
+    .addEventListener("click", function () {
+      closeModal();
+    });
+  document
+    .getElementById("close-prompt-options")
+    .addEventListener("click", function () {
+      closeModal();
+    });
+}
 
 function printPage() {
   // override settings, just in case
