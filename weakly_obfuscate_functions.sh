@@ -1,3 +1,5 @@
+cd public
+
 scriptName='minified-script.js'
 scriptText=`cat ${scriptName}`
 functionNames=()
