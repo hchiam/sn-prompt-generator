@@ -31,9 +31,12 @@ else
   minify style.css > minified-style.css
 fi
 
+bash weakly_obfuscate.sh
+
 # copy "regular" files into the public folder:
 cp *.* public
 rm public/copy-to-public-folder.sh
+rm public/weakly_obfuscate.sh
 rm public/README.md
 rm public/script.js
 rm public/style.css
