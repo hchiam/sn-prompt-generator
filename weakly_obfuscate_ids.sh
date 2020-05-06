@@ -21,6 +21,7 @@ replace_all_matches() {
   sed -i '' "s/id=\"${idName}\"/id=\"${replacement}\"/g" $htmlName2
   sed -i '' "s/\"${idName}\"/\"${replacement}\"/g" 'minified-script.js'
   sed -i '' "s/#${idName}{/#${replacement}{/g" 'minified-style.css'
+  sed -i '' "s/#${idName}:/#${replacement}:/g" 'minified-style.css'
 }
 
 regex='id="([a-zA-Z0-9_:.-][a-zA-Z0-9_:.-]*)"'
@@ -36,7 +37,7 @@ idNames=($(echo "${idNames[@]}" | tr ' ' '\n' | sort -u | tr '\n' ' '))
 for i in "${!idNames[@]}"
 do
   idName=${idNames[$i]}
-  randomName="i$((RANDOM % 10))_$i"
+  randomName="_$((RANDOM % 10000))i$(($i * 137))"
   # echo "index: $i    random name: $randomName    <-    id name: ${idNames[$i]}"
   replace_all_matches $idName $randomName
 done

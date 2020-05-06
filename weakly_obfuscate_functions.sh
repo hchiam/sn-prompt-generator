@@ -35,7 +35,7 @@ functionNames=($(echo "${functionNames[@]}" | tr ' ' '\n' | sort -u | tr '\n' ' 
 for i in "${!functionNames[@]}"
 do
   functionName=${functionNames[$i]}
-  randomName="v$((RANDOM % 10))_$i"
+  randomName="_$((RANDOM % 10000))f$(($i * 137))"
   # echo "index: $i    random name: $randomName    <-    function name: ${functionNames[$i]}"
   replace_all_matches $functionName $randomName
 done
