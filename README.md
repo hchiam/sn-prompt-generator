@@ -1,6 +1,6 @@
 # Sermon Note Prompt Generator
 
-![version](https://img.shields.io/github/release/hchiam/sn-prompt-generator) [![HitCount](http://hits.dwyl.com/hchiam/sn-prompt-generator.svg)](http://hits.dwyl.com/hchiam/sn-prompt-generator)
+![version](https://img.shields.io/github/release/hchiam/sn-prompt-generator) [![HitCount](http://hits.dwyl.com/hchiam/sn-prompt-generator.svg)](http://hits.dwyl.com/hchiam/sn-prompt-generator) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 <https://sn-prompt-generator.surge.sh>
 
