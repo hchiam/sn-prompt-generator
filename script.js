@@ -18,7 +18,7 @@ setTimeout(function () {
 
 setTimeout(function () {
   let element = document.getElementById("choose-prompt");
-  element.className = element.className.replace(/temporarily-yellow/g, "");
+  element.className = element.className.replace(/temporarily-highlight/g, "");
 }, 1000);
 
 function setListeners() {
@@ -29,11 +29,13 @@ function setListeners() {
     .getElementById("random-prompt")
     .addEventListener("click", function () {
       useRandomSNPrompt();
+      useRandomReminder();
     });
   document
     .getElementById("choose-prompt")
     .addEventListener("click", function () {
       choosePrompt();
+      useRandomReminder();
     });
   document
     .getElementById("close-prompt-modal")
@@ -193,11 +195,15 @@ function createReminder(message) {
 
 function highlightPrompt() {
   let promptSpan = document.getElementById("prompt");
-  promptSpan.style.background = "yellow";
+  promptSpan.style.background = "#2f5cd6";
+  promptSpan.style.color = "snow";
   promptSpan.style.padding = "10px";
+  promptSpan.style.lineHeight = "2rem";
   setTimeout(function () {
     promptSpan.style.background = "white";
+    promptSpan.style.color = "black";
     promptSpan.style.padding = "0";
+    promptSpan.style.lineHeight = "1rem";
   }, 500);
 }
 

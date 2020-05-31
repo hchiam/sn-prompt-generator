@@ -1,3 +1,8 @@
+:root {
+  --highlight-background: #2f5cd6;
+  --highlight-text: snow;
+}
+
 * {
   font-family: avenir, helvetica, arial, sans-serif;
   border-radius: 5px;
@@ -55,8 +60,9 @@ footer {
   text-align: center;
 }
 
-.temporarily-yellow {
-  background: yellow;
+.temporarily-highlight {
+  background: var(--highlight-background);
+  color: var(--highlight-text);
 }
 
 button {
@@ -117,19 +123,39 @@ hr {
 
 @media not print {
   button:hover {
-    background: #2fa7d6;
+    background: var(--highlight-background);
+    color: var(--highlight-text);
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.12), 0 1px 5px rgba(0, 0, 0, 0.24);
     font-weight: bold;
   }
 
   a:hover {
     text-decoration: underline;
-    color: blue;
+    color: var(--highlight-background);
     font-size: medium;
   }
 
   #prompt:hover {
-    background: yellow !important;
+    /* use !important to override JavaScript-set values */
+    background: var(--highlight-background) !important;
+    color: var(--highlight-text) !important;
     padding: 10px !important;
+    line-height: 2rem !important;
+  }
+}
+
+/* animations below: */
+
+body {
+  transform: scale(0);
+  animation: enter 0.25s forwards;
+}
+
+@keyframes enter {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
   }
 }
