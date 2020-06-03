@@ -30,12 +30,14 @@ function setListeners() {
     .addEventListener("click", function () {
       useRandomSNPrompt();
       useRandomReminder();
+      useRandomLabels();
     });
   document
     .getElementById("choose-prompt")
     .addEventListener("click", function () {
       choosePrompt();
       useRandomReminder();
+      useRandomLabels();
     });
   document
     .getElementById("close-prompt-modal")
