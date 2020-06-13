@@ -1,4 +1,4 @@
-const SW_VERSION = "snpg-version_14"; // also can serve as cache name
+const SW_VERSION = "snpg-version_15"; // also can serve as cache name
 
 const appShellURLs = [
   "/index.html",

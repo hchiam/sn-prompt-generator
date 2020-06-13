@@ -12,13 +12,17 @@ useRandomLabels();
 
 setListeners();
 
+document.documentElement.scrollTop = 0;
+
 setTimeout(function () {
   document.getElementById("print-page").innerText = "→ Print";
+  alert("Now works offline! :)\n\n(To get updates, connect to the internet.)");
 }, 2000);
 
 setTimeout(function () {
   let element = document.getElementById("choose-prompt");
   element.className = element.className.replace(/temporarily-highlight/g, "");
+  document.documentElement.scrollTop = 0;
 }, 1000);
 
 function setListeners() {

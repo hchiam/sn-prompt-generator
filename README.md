@@ -1,6 +1,6 @@
 # Sermon Note Prompt Generator
 
-![version](https://img.shields.io/github/release/hchiam/sn-prompt-generator) [![HitCount](http://hits.dwyl.com/hchiam/sn-prompt-generator.svg)](http://hits.dwyl.com/hchiam/sn-prompt-generator) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+![version](https://img.shields.io/github/release/hchiam/sn-prompt-generator) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![HitCount](http://hits.dwyl.com/hchiam/sn-prompt-generator.svg)](http://hits.dwyl.com/hchiam/sn-prompt-generator)
 
 <https://sn-prompt-generator.surge.sh>
 
@@ -19,7 +19,7 @@ open public/index.html
 
 The `index.html` file inside the `public` folder is the one that gets served "publicly" (i.e. on surge.sh).
 
-(If publishing to surge.sh, remember to update the service worker.)
+(If publishing to surge.sh, remember to _**update the service worker**_.)
 
 `bash copy-to-public-folder.sh; surge public https://sn-prompt-generator.surge.sh`
 
