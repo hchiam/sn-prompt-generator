@@ -23,6 +23,10 @@ The `index.html` file inside the `public` folder is the one that gets served "pu
 
 `bash copy-to-public-folder.sh; surge public https://sn-prompt-generator.surge.sh`
 
+## For testing
+
+`bash copy-to-public-folder.sh; surge public https://sn-prompt-generator-test.surge.sh`
+
 ## Version Notes Highlights
 
 - [1.0.0](https://github.com/hchiam/sn-prompt-generator/tree/3cf92d7e4c7dedd926cf7496e7ae8c14e0a9b2e8): Included many ["pure fun" prompts from kids](https://github.com/hchiam/sn-prompt-generator/blob/3cf92d7e4c7dedd926cf7496e7ae8c14e0a9b2e8/script.js#L150) that we kept _just for the start_ (there was a longer-term plan in mind since the beginning).

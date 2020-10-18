@@ -3,7 +3,7 @@
   <head>
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'none'; script-src https://sn-prompt-generator.surge.sh/minified-script.js minified-script.js; style-src https://sn-prompt-generator.surge.sh/minified-style.css minified-style.css; img-src https://sn-prompt-generator.surge.sh/favicon.ico favicon.ico; worker-src https://sn-prompt-generator.surge.sh/service-worker.js;"
+      content="default-src 'none'; script-src https://sn-prompt-generator.surge.sh/minified-script.js https://sn-prompt-generator-test.surge.sh/minified-script.js https://sn-prompt-generator.surge.sh/reminder.js https://sn-prompt-generator-test.surge.sh/reminder.js; style-src https://sn-prompt-generator.surge.sh/minified-style.css https://sn-prompt-generator-test.surge.sh/minified-style.css; worker-src https://sn-prompt-generator.surge.sh/service-worker.js https://sn-prompt-generator-test.surge.sh/service-worker.js; manifest-src manifest.webmanifest;"
     />
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -11,9 +11,11 @@
     <link rel="manifest" href="manifest.webmanifest" />
     <link rel="stylesheet" href="minified-style.css" />
     <script src="minified-script.js" defer></script>
+    <script src="reminder.js"></script>
     <title>SN Prompt Generator</title>
   </head>
   <body>
+    <!-- Remember: God is watching. Clear conscience? -->
     <div id="button-bar" role="presentation">
       <button
         id="print-page"
@@ -38,13 +40,9 @@
     <div id="modal" role="presentation">
       <div id="modal-content" role="presentation">
         <h1 id="modal-title">Choose a Prompt:</h1>
-        <button id="close-prompt-modal">
-          Cancel
-        </button>
+        <button id="close-prompt-modal">Cancel</button>
         <ol id="promptOptions"></ol>
-        <button id="close-prompt-options">
-          Cancel
-        </button>
+        <button id="close-prompt-options">Cancel</button>
       </div>
     </div>
     <p class="mini left-align">
