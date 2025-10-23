@@ -4,6 +4,8 @@
 
 <https://sn-prompt-generator.surge.sh>
 
+Or if surge.sh is down again: <https://sn-prompt-generator.vercel.app>
+
 Fun fact: Works offline! :)
 
 You may also like: <https://github.com/hchiam/bible-verse-listener>
@@ -26,6 +28,15 @@ The `index.html` file inside the `public` folder is the one that gets served "pu
 ## For testing
 
 `bash copy-to-public-folder.sh; surge public https://sn-prompt-generator-test.surge.sh`
+
+## For backup vercel site
+
+`bash copy-to-public-folder.sh; cd public; vercel`
+
+```sh
+cd public;
+vercel --prod;
+```
 
 ## Version Notes Highlights
 
